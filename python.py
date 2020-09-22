@@ -171,15 +171,3 @@ def find_sum(n, i):
 
 print(find_sum(9, 7))
 
-#COMMON USEFUL LIST METHODS
-
-#append - adds an item to the end of the list
-l = ['donky', 'dragon', 'dinosaur', 'elephant', 'monkey']
-l.append('giraffe')
-print(l) #l = ['donky', 'dragon', 'dinosaur', 'elephant', 'monkey', 'giraffe']
-
-#extend - extends a list with all items from iterable
-l = ['donky', 'dragon', 'dinosaur', 'elephant', 'monkey']
-l.extend(['giraffe', 'unicorn', 'hippogriff'])
-#l = ['donky', 'dragon', 'dinosaur', 'elephant', 'monkey', 'giraffe', 'unicorn', 'hippogriff']
-print(l)
