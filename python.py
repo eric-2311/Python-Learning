@@ -123,3 +123,63 @@ def iterate2(l):
     return nl
 
 print(iterate2(l)) #[2, 6, 8, 12, 16]
+
+#Unpacking argument lists with * operator
+l = [2, 10]
+print(list(range(*l)))
+
+#Delivering keyword args via dictionary
+d = {'voltage': '4 million volts', 'state': 'fried', 'action': 'zapped'}
+def computer(voltage, state='fine', action='powered on'):
+    print('This computer just ate ' + voltage)
+    print('now, its ' + state + ' and ' + action, end='. ')
+
+computer(**d)
+computer('500 volts') 
+
+#Lambda Expression / Anonymous (nameless) Functions
+
+#Saving lambda function to variable for use
+g = lambda x: 3*x + 2
+print(g(2)) 
+
+#Basic use of lambda function
+def make_incrementor(n):
+    return lambda x: x + n
+
+f = make_incrementor(1)
+print(f(1)) #2
+print(f(50)) #51
+
+#Using lambda to sort by each pairs index 1 alphabetically
+pairs = [(5, 'five'), (4, 'four'), (8, 'eight'), (1, 'one')]
+print(pairs)
+pairs.sort(key=lambda pair: pair[1])
+print(pairs)
+
+#Using lambda to sort list of names alpgabetically by last name
+authors = ['JR Tolkien', 'JK Rowling', 'Tennesse Williams', 'Junie B Jones', 'Topsy Krett']
+print(authors)
+authors.sort(key=lambda name: name.split()[-1])
+print(authors)
+
+#Proper documentation strings
+def find_sum(n, i):
+    """This function returns sum of two numbers
+    """
+    return n+i
+
+print(find_sum(9, 7))
+
+#COMMON USEFUL LIST METHODS
+
+#append - adds an item to the end of the list
+l = ['donky', 'dragon', 'dinosaur', 'elephant', 'monkey']
+l.append('giraffe')
+print(l) #l = ['donky', 'dragon', 'dinosaur', 'elephant', 'monkey', 'giraffe']
+
+#extend - extends a list with all items from iterable
+l = ['donky', 'dragon', 'dinosaur', 'elephant', 'monkey']
+l.extend(['giraffe', 'unicorn', 'hippogriff'])
+#l = ['donky', 'dragon', 'dinosaur', 'elephant', 'monkey', 'giraffe', 'unicorn', 'hippogriff']
+print(l)
