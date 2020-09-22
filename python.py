@@ -30,7 +30,7 @@ for i in range(10):
 l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 for i in range(len(l)):
     if i % 2 == 0:
-        print(i)
+        print(l[i])
 
 l = ['spiderman', 'ironman', 'thor', 'hulk', 'captain america']
 for i in range(len(l)):
@@ -78,3 +78,48 @@ def f(a, L=[]):
 print(f(1)) #[1]
 print(f(2)) #[1, 2]
 print(f(3)) #[1, 2, 3]
+
+#Default args. If you do not want default shared between subsequent calls:
+def f2(a, L=None):
+    if L is None:
+        L = []
+    L.append(a)
+    return L
+
+print(f2(1)) #[1]
+print(f2(2)) #[2]
+print(f2(3)) #[3]
+
+#"Splat"? operator for parameters
+def cheeseshop(*cheese):
+    for c in cheese:
+        print(c)
+
+print(cheeseshop('brie', 'cheddar', 'swiss', 'mozzerella'))
+
+#Any formal parameters after *args are keyword only parameters
+def concat(*args, sep='/'):
+    return sep.join(args)
+
+print(concat('mercury', 'venus', 'earth', 'mars'))
+
+#Iteration
+l = [1, 3, 2, 5, 6, 7, 8, 12, 13, 15, 16]
+def iterate(l):
+    nl = []
+    for i in range(len(l)):
+        if l[i] % 2 == 0:
+            nl.append(l[i])
+    return nl
+
+print(iterate(l)) #[2, 6, 8, 12, 16]
+
+l = [1, 3, 2, 5, 6, 7, 8, 12, 13, 15, 16]
+def iterate2(l):
+    nl = []
+    for i in l:
+        if i % 2 == 0:
+            nl.append(i)
+    return nl
+
+print(iterate2(l)) #[2, 6, 8, 12, 16]
