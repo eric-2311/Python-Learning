@@ -15,8 +15,18 @@ list = ['the', 'cat', 'in', 'the', 'hat']
 for w in list:
     print(w, len(w))
 
-#Range function
+#Range function range(start, end, step)
 n = 100
-for i in range(n):
+for i in range(50, n, 2):
+    print(i)
+
+#Range function range(length)
+for i in range(10):
+    if i % 2 == 0:
+        print(i)
+
+#Iterating over a list using range and len
+list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for i in range(len(list)):
     if i % 2 == 0:
         print(i)
