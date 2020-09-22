@@ -123,3 +123,77 @@ def peek2():
     return stack[0]
 
 print(peek2())
+
+
+#USING A LIST AS A QUEUE
+#-----------------------
+
+queue = ['monkey', 'elephant', 'dinosaur', 'dragon', 'donkey']
+
+#Using a deque constructor
+from collections import deque
+deq = deque(queue)
+print(deq)
+
+#Adding to back of queue
+deq.append('hippo')
+print(deq)
+
+#Removing from front of queue
+print(deq.popleft())
+print(deq)
+
+#Adding to front of the queue
+deq.insert(0, 'ant')
+print(deq)
+
+#Removing from back of the queue
+deq.pop()
+print(deq)
+
+
+#LISTS COMPREHENSION
+#-------------------
+#A concise way to create lists
+
+
+#Finding the first 10 square nums usinf for loop
+#leaves the variable x in memory after loop completion
+def find_first_n_sq_nums(n):
+    squares = []
+    for x in range(n):
+        squares.append(x**2)
+    return squares
+
+print(find_first_n_sq_nums(10))
+
+
+#Finding the first 20 square nums using list() constructor
+#and map(function, iterable)
+def list_first_n_sq_nums(n):
+    return list(map(lambda x: x**2, range(n)))
+
+print(list_first_n_sq_nums(20))
+
+
+#Finding the first 20 square nums list comprehension
+squares = [x**2 for x in range(20)]
+print(squares)
+
+
+#Chaining together multiple for and if clauses
+l1 = [1, 2, 3, 4, 5]
+l2 = [5, 6, 2, 7, 4]
+same_combos = [(x, y) for x in l1 for y in l2 if x == y]
+print(same_combos)
+
+
+#The above is the same as saying:
+def nested_same_combos(l1, l2):
+    pairs = []
+    for x in l1:
+        for y in l2:
+            if x == y:
+                pairs.append((x, y))
+    return pairs
+print(nested_same_combos(l1, l2))
