@@ -197,3 +197,29 @@ def nested_same_combos(l1, l2):
                 pairs.append((x, y))
     return pairs
 print(nested_same_combos(l1, l2))
+
+
+#Flattening a listcomp
+listcomp = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened = [num for l in listcomp for num in l]
+print(flattened)
+
+
+#Transposing a matrix
+matrix = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
+]
+
+#Nested for loop
+def transpose(matrix):
+    transposed = []
+    for i in range(len(matrix)):
+        new_row = []
+        for row in matrix:
+            new_row.append(row[i])
+        transposed.append(new_row)
+    return transposed
+        
+print(transpose(matrix))
