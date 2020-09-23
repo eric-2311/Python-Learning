@@ -50,6 +50,7 @@ print(l.count('monkey')) #2
 
 
 #sort - sort(key=None, reverse=False) sorts list based on criteria
+#WILL MUTATE LIST IN PLACE
 l = ['donkey', 'dragon', 'dinosaur', 'elephant', 'monkey']
 l.sort()
 print(l) #['dinosaur', 'donkey', 'dragon', 'elephant', 'monkey']
