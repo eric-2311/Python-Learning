@@ -86,3 +86,40 @@ def namelist(names):
             s += ', ' + name_list[i]
             
     return s
+
+# Your task is to write a function which returns the sum of following 
+# series upto nth term(parameter).
+
+# Series: 1 + 1/4 + 1/7 + 1/10 + 1/13 + 1/16 +...
+# Rules:
+# You need to round the answer to 2 decimal places and return it as String.
+
+# If the given value is 0 then it should return 0.00
+
+# You will only be given Natural Numbers as arguments.
+
+# Examples:
+# SeriesSum(1) => 1 = "1.00"
+# SeriesSum(2) => 1 + 1/4 = "1.25"
+# SeriesSum(5) => 1 + 1/4 + 1/7 + 1/10 + 1/13 = "1.57"
+
+def series_sum(n):
+    num = 1
+    denom = 4
+    terms = [1]
+    
+    while len(terms) < n:
+        new_num = num/denom
+        terms.append(new_num)
+        denom += 3
+    
+    if sum(terms) == 0:
+        return str(format(0, '.2f'))
+    elif n == 0:
+        return str(format(0, '.2f'))
+    else:
+        return str(format(sum(terms), '.2f'))
+
+#List comprehension
+def series_sum2(n):
+    return '{:.2f}'.format(sum(1.0/(3 * i + 1) for i in range(n)))
