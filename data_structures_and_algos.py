@@ -199,7 +199,7 @@ def nested_same_combos(l1, l2):
 print(nested_same_combos(l1, l2))
 
 
-#Flattening a listcomp
+#Flattening listcomp
 listcomp = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 flattened = [num for l in listcomp for num in l]
 print(flattened)
@@ -223,3 +223,37 @@ def transpose(matrix):
     return transposed
         
 print(transpose(matrix))
+
+
+#Nested listcomp
+def nested_transpose(matrix):
+    transposed = []
+    for i in range(len(matrix)):
+        transposed.append([row[i] for row in matrix])
+    return transposed
+
+print(nested_transpose(matrix))
+
+
+#Nested listcomp
+transposed = [[row[i] for row in matrix] for i in range(len(matrix))]
+print(transposed)
+
+
+#Bubble Sort
+def sum_two_smallest_numbers(numbers):
+    sorted = False
+    while not sorted:
+        sorted = True
+        for i in range(len(numbers)-1):
+            if numbers[i] > numbers[i+1]:
+                prev = numbers[i]
+                numbers[i] = numbers[i+1]
+                numbers[i+1] = prev     
+                sorted = False
+    return numbers
+
+
+#     SETS
+#---------------
+
