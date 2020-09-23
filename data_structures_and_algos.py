@@ -241,7 +241,7 @@ print(transposed)
 
 
 #Bubble Sort
-def sum_two_smallest_numbers(numbers):
+def bubble_sort(numbers):
     sorted = False
     while not sorted:
         sorted = True
