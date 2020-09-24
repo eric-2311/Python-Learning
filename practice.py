@@ -151,7 +151,7 @@ def tribonacci(signature, n):
     seq = [signature[0], signature[1], signature[2]]
     
     if n == 1:
-        return [signature[0]]7
+        return [signature[0]]
     elif n == 2: 
         return [signature[0], signature[1]]
     elif n == 0:
