@@ -187,3 +187,7 @@ def validate_pin(pin):
             return False
         
     return True
+
+#List comprehension
+def validate_pin2(pin):
+    return len(pin) in (4, 6) and pin.isdigit()
