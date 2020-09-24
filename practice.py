@@ -191,3 +191,36 @@ def validate_pin(pin):
 #List comprehension
 def validate_pin2(pin):
     return len(pin) in (4, 6) and pin.isdigit()
+
+# Write a function that when given a URL as a string, parses out just the 
+# domain name and returns it as a string. For example:
+
+# domain_name("http://github.com/carbonfive/raygun") == "github" 
+# domain_name("http://www.zombie-bites.com") == "zombie-bites"
+# domain_name("https://www.cnet.com") == "cnet"
+
+def domain_name(url):
+    symbols = ['/', '.', ':']
+    prefix = ['www', 'http', 'https']
+    l = list(url)
+    
+    for x in symbols:
+        while x in l:
+            l.insert(l.index(x), '#')
+            l.remove(x)
+            
+    m = ''.join(l)
+         
+    m = list(m.split('#'))
+    
+    for x in m:
+        n = ''
+        if n in m:
+            m.remove(n)        
+    
+    for x in prefix:
+        while x in m:
+            if x in prefix:
+                m.remove(x)
+            
+    return m[0]
