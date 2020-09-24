@@ -241,7 +241,8 @@ transposed = [[row[i] for row in matrix] for i in range(len(matrix))]
 print(transposed)
 
 
-#Bubble Sort
+#BUBBLE SORT ALGORITHM
+#---------------------
 def bubble_sort(numbers):
     sorted = False
     while not sorted:
@@ -253,6 +254,28 @@ def bubble_sort(numbers):
                 numbers[i+1] = prev     
                 sorted = False
     return numbers
+
+
+#BINARY SEARCH ALGORITHM
+#-----------------------
+def binary_search(list, target):
+    start = 0
+    end = len(list)-1
+
+    while start <= end:
+        mid = start + end
+        if list[mid] == target:
+            return mid
+
+        if list[mid] > target:
+            end = mid - 1
+        elif list[mid] < target:
+            start = mid + 1
+
+    return None
+
+example_list = [1, 2, 3, 4, 5, 7, 12, 26, 18]
+print(binary_search(example_list, 7)) 
 
 
 #     SETS
