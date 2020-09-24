@@ -161,3 +161,29 @@ def tribonacci(signature, n):
         seq.append(seq[-1] + seq[-2] + seq[-3])
         
     return seq
+
+# ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything 
+# but exactly 4 digits or exactly 6 digits.
+
+# If the function is passed a valid PIN string, return true, else return false.
+
+# eg:
+
+# validate_pin("1234") == True
+# validate_pin("12345") == False
+# validate_pin("a234") == False
+
+def validate_pin(pin):
+    l = list(pin)
+    nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    
+    if len(pin) == 0:
+        return False
+    elif len(l) != 4 and len(l) != 6:
+        return False
+        
+    for i in range(len(l)):
+        if l[i] not in nums:
+            return False
+        
+    return True
