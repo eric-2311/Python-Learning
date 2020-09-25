@@ -396,7 +396,7 @@ def numTeams(rating):
     return len(result)
 
 def num_teams(rating):
-    '''More optimized solution for num_teams'''
+    '''More optimized solution for num_teams :)'''
     import pdb
     # pdb.set_trace()
     teams = 0
