@@ -400,7 +400,6 @@ def num_teams(rating):
     import pdb
     # pdb.set_trace()
     teams = 0
-    l = []
     x = 0
 
     while x <= len(rating)-2:
