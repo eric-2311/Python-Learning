@@ -317,3 +317,80 @@ def sort_array(source_array):
             j += 1
             
     return source_array
+
+# There are n soldiers standing in a line. Each soldier is assigned a unique rating value.
+
+# You have to form a team of 3 soldiers amongst them under the following rules:
+
+# Choose 3 soldiers with index (i, j, k) with rating (rating[i], rating[j], rating[k]).
+# A team is valid if:  (rating[i] < rating[j] < rating[k]) or (rating[i] > rating[j] > rating[k]) 
+# where (0 <= i < j < k < n).
+# Return the number of teams you can form given the conditions. (soldiers can be part of multiple teams).
+
+ 
+
+# Example 1:
+# Input: rating = [2,5,3,4,1]
+# Output: 3
+# Explanation: We can form three teams given the conditions. (2,3,4), (5,4,1), (5,3,1). 
+
+# Example 2:
+# Input: rating = [2,1,3]
+# Output: 0
+# Explanation: We can't form any team given the conditions.
+
+# Example 3:
+# Input: rating = [1,2,3,4]
+# Output: 4
+
+# Constraints:
+
+# n == rating.length
+# 1 <= n <= 200
+# 1 <= rating[i] <= 10^5
+
+
+def numTeams(rating):
+    '''I am so ashamed of this, give me some time to
+    refactor T_T'''
+
+    from itertools import permutations
+    
+    if rating == sorted(rating):
+        return len(rating)
+    
+    perms = list(permutations(rating))
+    
+    for i in range(len(perms)):
+        perms[i] = perms[i][:3]
+        
+    l = list(filter(lambda x: x[0] < x[1] and x[1] < x[2], perms))
+    m = list(filter(lambda x: x[0] > x[1] and x[1] > x[2], perms))
+    
+    # print(l)
+    
+    l = list(filter(lambda x: rating.index(x[0]) < rating.index(x[1]), l))
+    l = list(filter(lambda x: rating.index(x[1]) < rating.index(x[2]), l))
+    l = list(filter(lambda x: rating.index(x[0]) < rating.index(x[1]), l))
+    l = list(filter(lambda x: rating.index(x[0]) < rating.index(x[2]), l))
+    
+    print(l)
+    
+    m = list(filter(lambda x: rating.index(x[0]) < rating.index(x[2]), m))
+    m = list(filter(lambda x: rating.index(x[1]) < rating.index(x[2]), m))
+    m = list(filter(lambda x: rating.index(x[0]) < rating.index(x[1]), m))
+    m = list(filter(lambda x: rating.index(x[0]) < rating.index(x[2]), m))
+    
+    print(m)
+    
+    result = []
+    
+    for x in l:
+        if x not in result:
+            result.append(x)
+            
+    for x in m:
+        if x not in result:
+            result.append(x)
+            
+    return len(result)

@@ -171,3 +171,6 @@ def find_sum(n, i):
 
 print(find_sum(9, 7))
 
+
+
+
