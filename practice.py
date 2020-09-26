@@ -367,8 +367,6 @@ def numTeams(rating):
     l = list(filter(lambda x: x[0] < x[1] and x[1] < x[2], perms))
     m = list(filter(lambda x: x[0] > x[1] and x[1] > x[2], perms))
     
-    # print(l)
-    
     l = list(filter(lambda x: rating.index(x[0]) < rating.index(x[1]), l))
     l = list(filter(lambda x: rating.index(x[1]) < rating.index(x[2]), l))
     l = list(filter(lambda x: rating.index(x[0]) < rating.index(x[1]), l))
@@ -417,3 +415,24 @@ def num_teams(rating):
         x += 1
 
     print(teams)
+    return teams
+
+# Given a collection of distinct integers, return all possible permutations.
+
+# Example:
+
+# Input: [1,2,3]
+# Output:
+# [
+#   [1,2,3],
+#   [1,3,2],
+#   [2,1,3],
+#   [2,3,1],
+#   [3,1,2],
+#   [3,2,1]
+# ]
+
+def permute(nums):
+        from itertools import permutations
+        
+        return permutations(nums)
