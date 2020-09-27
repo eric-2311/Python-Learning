@@ -443,8 +443,6 @@ def permute(nums):
 
 # It is guaranteed that the node to be deleted is not a tail node in the list.
 
-
-
 def deleteNode(linked_list, node):
         """
         :type node: ListNode
