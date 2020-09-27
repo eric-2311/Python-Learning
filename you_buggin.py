@@ -39,10 +39,10 @@ class TreeNode:
 
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
+        import pdb
+        # pdb.set_trace()
         depth = 1
         check = root
-        
-        print(root)
         
         if root == None:
             return 0
@@ -80,5 +80,9 @@ class Solution:
         print(depth)
         
 p = Solution()
-l = TreeNode([1,2,3,4,None,None,5])
+l = TreeNode(val=1, left=TreeNode(val=2, left=TreeNode(val=4, left=None, right=None), right=None), 
+right=TreeNode(val=3, left=None, right=TreeNode(val=5, left=None, right=None)))
+TreeNode(val=2, left=TreeNode(val=4, left=None, right=None), right=None)
+
+#Skipping over last iteration for TreeNode val=4??
 p.maxDepth(l)
