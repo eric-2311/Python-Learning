@@ -46,9 +46,9 @@ class Solution:
         
         if root == None:
             return 0
-        elif root.left and root.right == None:
+        elif root.left and not root.left.left and not root.left.right and not root.right:
             return 2
-        elif root.right and root.left == None:
+        elif root.right and not root.right.left and not root.right.right and not root.left:
             return 2
         
         while check.right != None and check.left != None:
@@ -76,7 +76,10 @@ class Solution:
                 check = check.right
                 depth += 1
                 self.maxDepth(check)
-                
+
+        if check and not check.left and not check.right:
+            depth += 1
+
         print(depth)
         
 p = Solution()
