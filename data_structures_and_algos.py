@@ -281,7 +281,6 @@ def num_teams(rating):
     import pdb
     # pdb.set_trace()
     teams = 0
-    l = []
     x = 0
 
     while x <= len(rating)-2:
@@ -291,10 +290,8 @@ def num_teams(rating):
             while z < len(rating):
                 if rating[x] < rating[y] and rating[y] < rating[z]:
                     teams += 1
-                    l.append([rating[x], rating[y], rating[z]])
                 elif rating[x] > rating[y] and rating[y] > rating[z]:
                     teams += 1
-                    l.append([rating[x], rating[y], rating[z]])
 
                 z += 1
             y += 1
